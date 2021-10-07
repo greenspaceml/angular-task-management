@@ -14,4 +14,8 @@ export class LoginService {
   signIn(data): any {
     return this.http.post(environment.baseUrl + 'auth/signin', data);
   }
+
+  googleSignIn(): any {
+    return this.http.get(environment.baseUrl + 'auth/google');
+  }
 }
