@@ -6,7 +6,6 @@ import {environment} from '../../environments/environment';
   providedIn: 'root'
 })
 export class LoginService {
-
   constructor(
       private http: HttpClient
   ) { }

@@ -22,7 +22,7 @@
                                     <textarea formControlName="description" class="form-control" rows="5"></textarea>
                                 </div>
                             </div>
-                            <label id="example-radio-group-label">Pick your favorite season</label>
+                            <label id="example-radio-group-label">Status</label>
                             <mat-radio-group
                                     aria-labelledby="example-radio-group-label"
                                     class="example-radio-group"
@@ -31,6 +31,16 @@
                                     {{status}}
                                 </mat-radio-button>
                             </mat-radio-group>
+<!--                            <div>-->
+<!--                                <mat-form-field appearance="fill">-->
+<!--                                    <mat-label>Type</mat-label>-->
+<!--                                    <mat-select formControlName="typeId">-->
+<!--                                        <mat-option *ngFor="let type of types" [value]="type.type_id">-->
+<!--                                            {{type.type_title}}-->
+<!--                                        </mat-option>-->
+<!--                                    </mat-select>-->
+<!--                                </mat-form-field>-->
+<!--                            </div>-->
                             <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update
                             </button>
                             <div class="clearfix"></div>

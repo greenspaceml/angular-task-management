@@ -20,6 +20,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {TaskCreateComponent} from '../../task/task-create/task-create.component';
 import {TaskUpdateComponent} from '../../task/task-update/task-update.component';
 import {MatRadioModule} from '@angular/material/radio';
+import {TypeListComponent} from '../../type/type-list/type-list.component';
+import {TypeCreateComponent} from '../../type/type-create/type-create.component';
+import {TypeUpdateComponent} from '../../type/type-update/type-update.component';
 
 @NgModule({
     imports: [
@@ -46,6 +49,9 @@ import {MatRadioModule} from '@angular/material/radio';
         UpgradeComponent,
         TaskCreateComponent,
         TaskUpdateComponent,
+        TypeListComponent,
+        TypeCreateComponent,
+        TypeUpdateComponent,
     ]
 })
 

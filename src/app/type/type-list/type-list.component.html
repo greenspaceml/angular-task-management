@@ -8,7 +8,7 @@
                         <p class="card-category"> Here is a subtitle for this table</p>
                     </div>
                     <div>
-                        <a class="btn btn-info" routerLink="/task-create">Create new Task</a>
+                        <a class="btn btn-info" routerLink="/type-create">Create new Type</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -21,37 +21,19 @@
                                     Title
                                 </th>
                                 <th>
-                                    Description
-                                </th>
-                                <th>
-                                    Status
-                                </th>
-                                <th>
-                                    Type
-                                </th>
-                                <th>
                                     Action
                                 </th>
                                 </thead>
                                 <tbody>
-                                <tr *ngFor="let task of taskList">
+                                <tr *ngFor="let task of types">
                                     <td>
-                                        <a routerLink="/task-update/{{task.id}}">{{task.id}}</a>
+                                        <a routerLink="/type-update/{{task.type_id}}">{{task.type_id}}</a>
                                     </td>
                                     <td>
-                                        {{task.title}}
+                                        {{task.type_title}}
                                     </td>
                                     <td>
-                                        {{task.description}}
-                                    </td>
-                                    <td>
-                                        {{task.status}}
-                                    </td>
-                                    <td>
-                                        {{task.prioritylevel}}
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-danger" (click)="removeTask(task.id)">Remove</button>
+                                        <button class="btn btn-danger" (click)="removeTask(task.type_id)">Remove</button>
                                     </td>
                                 </tr>
                                 </tbody>

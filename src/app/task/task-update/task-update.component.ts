@@ -29,7 +29,8 @@ export class TaskUpdateComponent extends NotificationsComponent implements OnIni
         this.taskForm = this.fb.group({
             title: [],
             description: [],
-            status: []
+            status: [],
+            typeId: []
         });
         this.onLoadData(this.id);
     }
@@ -53,6 +54,7 @@ export class TaskUpdateComponent extends NotificationsComponent implements OnIni
                 title: task.title,
                 description: task.description,
                 status: task.status,
+                // typeId: task.typeId
             })
         })
     }

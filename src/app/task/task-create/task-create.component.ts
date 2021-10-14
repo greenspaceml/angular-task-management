@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
-import {TaskForCreate, TaskResponse} from '../../interfaces/task.interface';
+import {TaskForCreate, TaskResponse, Type} from '../../interfaces/task.interface';
 import {TaskService} from '../../services/task.service';
 import {NotificationsComponent} from '../../notifications/notifications.component';
 import {Router} from '@angular/router';
+import {TypeService} from '../../services/type.service';
 
 @Component({
     selector: 'app-task-create',
@@ -12,11 +13,13 @@ import {Router} from '@angular/router';
 })
 export class TaskCreateComponent extends NotificationsComponent implements OnInit {
     taskForm: FormGroup;
+    types: Type[] = [];
 
     constructor(
         private fb: FormBuilder,
         private taskService: TaskService,
         private router: Router,
+        private typeService: TypeService
     ) {
         super();
     }
@@ -25,7 +28,9 @@ export class TaskCreateComponent extends NotificationsComponent implements OnIni
         this.taskForm = this.fb.group({
             title: [],
             description: [],
+            typeId: []
         })
+        this.onLoadData();
     }
 
     onSubmitForm(): void {
@@ -37,6 +42,13 @@ export class TaskCreateComponent extends NotificationsComponent implements OnIni
             } else {
                 this.showNotification('top', 'right', 'danger', 'There was an error when creating a new task!');
             }
+        })
+    }
+
+    onLoadData(): void {
+        this.types = [];
+        this.typeService.getTypes({}).subscribe(res => {
+            this.types = [...res];
         })
     }
 

@@ -10,6 +10,9 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import {TaskCreateComponent} from '../../task/task-create/task-create.component';
 import {TaskUpdateComponent} from '../../task/task-update/task-update.component';
+import {TypeListComponent} from '../../type/type-list/type-list.component';
+import {TypeCreateComponent} from '../../type/type-create/type-create.component';
+import {TypeUpdateComponent} from '../../type/type-update/type-update.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
@@ -22,4 +25,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade',        component: UpgradeComponent },
     { path: 'task-create',        component: TaskCreateComponent },
     { path: 'task-update/:id',        component: TaskUpdateComponent },
+    { path: 'type-list',        component: TypeListComponent },
+    { path: 'type-create',        component: TypeCreateComponent },
+    { path: 'type-update/:id',        component: TypeUpdateComponent },
 ];
