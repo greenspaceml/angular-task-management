@@ -3,6 +3,10 @@ export interface TaskForSearch {
     status?: TaskStatus,
 }
 
+export interface TypeForSearch {
+    search?: string,
+}
+
 export enum TaskStatus {
     OPEN = 'OPEN',
     IN_PROGRESS = 'IN_PROGRESS',
@@ -14,6 +18,12 @@ export interface Task {
     title: string;
     description: string;
     status: TaskStatus;
+    prioritylevel: string;
+}
+
+export interface Type {
+    type_id: string;
+    type_title: string;
 }
 
 export interface TaskForCreate {

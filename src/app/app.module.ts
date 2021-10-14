@@ -19,6 +19,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from 'angularx-social-login';
+import { TypeListComponent } from './type/type-list/type-list.component';
+import { TypeCreateComponent } from './type/type-create/type-create.component';
+import { TypeUpdateComponent } from './type/type-update/type-update.component';
 
 @NgModule({
     imports: [
@@ -38,6 +42,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
         MatInputModule,
         MatSelectModule,
         MatTooltipModule,
+        SocialLoginModule
     ],
     declarations: [
         AppComponent,
@@ -49,6 +54,20 @@ import {MatTooltipModule} from '@angular/material/tooltip';
             provide: HTTP_INTERCEPTORS,
             useClass: TokenInterceptor,
             multi: true
+        },
+        {
+            provide: 'SocialAuthServiceConfig',
+            useValue: {
+                autoLogin: false,
+                providers: [
+                    {
+                        id: GoogleLoginProvider.PROVIDER_ID,
+                        provider: new GoogleLoginProvider(
+                            '697662178382-8ejinub0vu6u1udqlillafh5hdttjb3f.apps.googleusercontent.com'
+                        )
+                    }
+                ]
+            } as SocialAuthServiceConfig,
         }
     ],
     bootstrap: [AppComponent]

@@ -25,10 +25,13 @@
                             <button mat-raised-button type="submit" class="btn btn-danger">Sign-in</button>
                             <div clas="clearfix"></div>
                         </form>
-                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        <div *ngIf="!isLoggedin">
+                            <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
